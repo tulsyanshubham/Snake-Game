@@ -111,6 +111,7 @@ let startgame = () => {
     if (iscollide(snakearr)) {
         gameoveraudio.play();
         inputdir = { x: 0, y: 0 };
+        speed = 7;
         alert("Game Over! Press Enter key to Continue");
         newrecord.style.fontSize = '0';
         snakearr = [{ x: 10, y: 7 }];
