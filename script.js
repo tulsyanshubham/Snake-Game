@@ -18,6 +18,14 @@ let scoreval = document.querySelector('.scoreval');
 let highscoreval = document.querySelector('.highscoreval');
 let newrecord = document.querySelector('.newrecord');
 
+if(localStorage.getItem('highscore')){
+    highscore = localStorage.getItem('highscore');
+    highscoreval.innerText=highscore;
+}
+else{
+    localStorage.setItem('highscore',highscore);
+}
+
 let snakearr = [
     { x: 10, y: 9 }
 ];
@@ -117,6 +125,7 @@ let startgame = () => {
         snakearr = [{ x: 10, y: 7 }];
         if (score > highscore) {
             highscore = score;
+            localStorage.setItem('highscore',highscore);
             highscoreval.innerText = highscore;
         }
         score = 0;
